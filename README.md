@@ -13,5 +13,10 @@ Affix the submit box as a toolbar to make it easier to update posts, pages and C
 2. Activate the plugin through the `Plugins` menu in WordPress
 
 == Changelog ==
+= 0.2 =
+1. Included a custom version of the Wordpress submit-div meta box
+2. Changed structure to flexbox.
+3. Modified the styling so post changes (post date, status, ) to not be quite as intrusive.
+
 = 0.1 =
 Initial build based on the Wordpress submit-div meta box
