@@ -1,0 +1,241 @@
+label[for=fixed-submitdiv-hide] {
+  display: none; }
+
+.fixed-toolbar-bottom #wpcontent {
+  padding-bottom: 44px; }
+
+.fixed-toolbar-top #wpcontent {
+  padding-top: 44px; }
+
+#fixed-submitdiv {
+  position: fixed;
+  top: 32px;
+  right: 0;
+  width: calc(100% - 160px );
+  margin-bottom: 0;
+  z-index: 1000;
+  border: none; }
+  #fixed-submitdiv .inside {
+    padding: 0;
+    margin-top: 0px;
+    height: 44px; }
+  #fixed-submitdiv h3.hndle, #fixed-submitdiv .handlediv {
+    display: none; }
+  #fixed-submitdiv #submitpost,
+  #fixed-submitdiv #minor-publishing,
+  #fixed-submitdiv #minor-publishing-actions,
+  #fixed-submitdiv #misc-publishing-actions,
+  #fixed-submitdiv #major-publishing-actions {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap; }
+  #fixed-submitdiv #submitpost {
+    justify-content: space-between; }
+  #fixed-submitdiv #minor-publishing {
+    justify-content: space-between; }
+  #fixed-submitdiv #minor-publishing-actions {
+    padding: 0; }
+  #fixed-submitdiv #misc-publishing-actions {
+    padding: 0;
+    /* align-items: stretch; */ }
+  #fixed-submitdiv #major-publishing-actions {
+    background: none;
+    border: none;
+    padding: 0; }
+  #fixed-submitdiv #publishing-action {
+    float: none;
+    padding: 0; }
+  #fixed-submitdiv .misc-pub-section {
+    padding: 0; }
+  #fixed-submitdiv .misc-pub-section {
+    display: inline-block;
+    padding: 12px 15px 12px 12px;
+    white-space: nowrap;
+    vertical-align: top;
+    position: relative;
+    background: transparent;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -ms-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out; }
+    #fixed-submitdiv .misc-pub-section p {
+      margin-bottom: 0; }
+    #fixed-submitdiv .misc-pub-section > a {
+      background: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      text-indent: -9999px;
+      -webkit-transition: background 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out;
+      -ms-transition: background 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out; }
+    #fixed-submitdiv .misc-pub-section label {
+      cursor: default; }
+    #fixed-submitdiv .misc-pub-section > div {
+      margin-top: 12px; }
+      #fixed-submitdiv .misc-pub-section > div#timestampdiv {
+        padding-top: 0; }
+    #fixed-submitdiv .misc-pub-section a.button-primary {
+      -webkit-transition: background 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out;
+      -ms-transition: background 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out; }
+    #fixed-submitdiv .misc-pub-section a.button-cancel {
+      opacity: .7;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      -ms-transition: opacity 0.2s ease-in-out;
+      -o-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
+      #fixed-submitdiv .misc-pub-section a.button-cancel:hover {
+        opacity: 1; }
+  #fixed-submitdiv a:focus {
+    box-shadow: none; }
+  #fixed-submitdiv #publishing-action, #fixed-submitdiv #delete-action {
+    padding: 7px; }
+  #fixed-submitdiv #save-action > input, #fixed-submitdiv #preview-action {
+    margin: 8px 10px; }
+  #fixed-submitdiv #post_status {
+    display: block;
+    margin: 8px 0; }
+
+/* Sunrise */
+.admin-color-fresh #fixed-submitdiv {
+  background-color: #333333; }
+  .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #333333;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #464646; }
+    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }
+
+.admin-color-light #fixed-submitdiv {
+  background-color: #cccccc; }
+  .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #cccccc;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #b7b7b7; }
+    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #333333; }
+    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #333333; }
+
+.admin-color-blue #fixed-submitdiv {
+  background-color: #096484; }
+  .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #096484;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #21728f; }
+    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }
+
+.admin-color-coffee #fixed-submitdiv {
+  background-color: #46403c; }
+  .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #46403c;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #57524e; }
+    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }
+
+.admin-color-ectoplasm #fixed-submitdiv {
+  background-color: #413256; }
+  .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #413256;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #534566; }
+    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }
+
+.admin-color-midnight #fixed-submitdiv {
+  background-color: #25282b; }
+  .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #25282b;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #3a3c3f; }
+    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }
+
+.admin-color-ocean #fixed-submitdiv {
+  background-color: #627c83; }
+  .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #627c83;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #71888e; }
+    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }
+
+.admin-color-sunrise #fixed-submitdiv {
+  background-color: #b43c38; }
+  .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+    background-color: #b43c38;
+    /* a, a span {
+    	color:  nth(nth($color-arrays, $i), 3);
+    } */ }
+    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+      background-color: #ba4e4b; }
+    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+      color: #eeeeee; }
+    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+      color: #eeeeee; }

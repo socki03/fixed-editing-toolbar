@@ -2,10 +2,10 @@ label[for=fixed-submitdiv-hide] {
   display: none; }
 
 .fixed-toolbar-bottom #wpcontent {
-  padding-bottom: 50px; }
+  padding-bottom: 44px; }
 
 .fixed-toolbar-top #wpcontent {
-  padding-top: 50px; }
+  padding-top: 44px; }
 
 #fixed-submitdiv {
   position: fixed;
@@ -13,10 +13,10 @@ label[for=fixed-submitdiv-hide] {
   right: 0;
   width: calc(100% - 160px );
   margin-bottom: 0;
-  z-index: 100;
+  z-index: 1000;
   border: none; }
   #fixed-submitdiv .inside {
-    padding: 5px 12px;
+    padding: 0 12px;
     margin-top: 0px; }
   #fixed-submitdiv h3.hndle, #fixed-submitdiv .handlediv {
     display: none; }
@@ -24,7 +24,8 @@ label[for=fixed-submitdiv-hide] {
   #fixed-submitdiv #preview-action,
   #fixed-submitdiv #save-action,
   #fixed-submitdiv #misc-publishing-actions {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: middle; }
     #fixed-submitdiv div#submitpost > div #minor-publishing-actions,
     #fixed-submitdiv #preview-action #minor-publishing-actions,
     #fixed-submitdiv #save-action #minor-publishing-actions,
@@ -51,33 +52,53 @@ label[for=fixed-submitdiv-hide] {
       #fixed-submitdiv #preview-action#major-publishing-actions #delete-action,
       #fixed-submitdiv #save-action#major-publishing-actions #delete-action,
       #fixed-submitdiv #misc-publishing-actions#major-publishing-actions #delete-action {
-        padding: 6px; }
-  #fixed-submitdiv #misc-publishing-actions > div {
-    cursor: default; }
-    #fixed-submitdiv #misc-publishing-actions > div > a {
-      width: 0;
-      display: inline-block;
-      overflow: hidden;
-      height: 14px;
-      -webkit-transition: all .5s ease;
-      -moz-transition: all .5s ease;
-      -ms-transition: all .5s ease;
-      -o-transition: all .5s ease;
-      transition: all .5s ease; }
-    #fixed-submitdiv #misc-publishing-actions > div:hover > a {
-      width: 23px; }
-    #fixed-submitdiv #misc-publishing-actions > div.misc-pub-revisions:hover > a {
-      width: 46px; }
-  #fixed-submitdiv #misc-publishing-actions p {
-    margin: 1em 0 0; }
+        /* padding:6px; */ }
+  #fixed-submitdiv #misc-publishing-actions {
+    padding: 0; }
+    #fixed-submitdiv #misc-publishing-actions > div {
+      cursor: default; }
+      #fixed-submitdiv #misc-publishing-actions > div > a {
+        /* -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease; */ }
+      #fixed-submitdiv #misc-publishing-actions > div.misc-pub-revisions:hover > a {
+        width: 46px; }
+    #fixed-submitdiv #misc-publishing-actions p {
+      margin: 1em 0 0; }
   #fixed-submitdiv .misc-pub-section {
     display: inline-block;
-    padding: 6px 6px 8px;
-    white-space: nowrap; }
+    padding: 12px 15px 12px 12px;
+    white-space: nowrap;
+    vertical-align: top;
+    position: relative;
+    background: transparent;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -ms-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out; }
+    #fixed-submitdiv .misc-pub-section > a {
+      background: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      text-indent: -9999px;
+      -webkit-transition: background 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out;
+      -ms-transition: background 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out; }
+    #fixed-submitdiv .misc-pub-section.show, #fixed-submitdiv .misc-pub-section > a:hover {
+      background: rgba(255, 255, 255, 0.1); }
   #fixed-submitdiv a:focus {
     box-shadow: none; }
-  #fixed-submitdiv #publishing-action {
-    padding: 5px; }
+  #fixed-submitdiv #publishing-action, #fixed-submitdiv #delete-action {
+    padding: 7px; }
 
 .admin-color-fresh #fixed-submitdiv {
   background-color: #222222; }

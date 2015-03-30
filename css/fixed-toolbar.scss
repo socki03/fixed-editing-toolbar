@@ -1,15 +1,23 @@
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
 label[for=fixed-submitdiv-hide] {
 	display: none;
 }
 
 .fixed-toolbar-bottom {
 	#wpcontent {
-		padding-bottom: 50px;
+		padding-bottom: 44px;
 	}
 }
 .fixed-toolbar-top {
 	#wpcontent {
-		padding-top: 50px;
+		padding-top: 44px;
 	}
 }
 
@@ -20,10 +28,10 @@ label[for=fixed-submitdiv-hide] {
 	right:0;
 	width:calc( 100% - 160px );
 	margin-bottom:0;
-	z-index: 100;
+	z-index: 1000;
 	border:none;
 	.inside {
-		padding: 5px 12px;
+		padding: 0 12px;
 		margin-top:0px;
 	}
 	h3.hndle, .handlediv {
@@ -34,6 +42,7 @@ label[for=fixed-submitdiv-hide] {
 	#save-action, 
 	#misc-publishing-actions {
 		display: inline-block;
+		vertical-align: middle;
 		#minor-publishing-actions {
 			display: inline-block;
 			vertical-align: middle;
@@ -50,27 +59,28 @@ label[for=fixed-submitdiv-hide] {
 			padding: 0px;
 			float:right;
 			#delete-action {
-				padding:6px;
+				/* padding:6px; */
 			}
 		}
 	}
 	#misc-publishing-actions {
+		padding:0;
 		> div {
 			cursor: default;
 			> a {
-				width: 0;
-				display: inline-block;
-				overflow: hidden;
-				height: 14px;
-				-webkit-transition: all .5s ease;
+				//width: 0;
+				//display: inline-block;
+				//overflow: hidden;
+				//height: 14px;
+				/* -webkit-transition: all .5s ease;
 				-moz-transition: all .5s ease;
 				-ms-transition: all .5s ease;
 				-o-transition: all .5s ease;
-				transition: all .5s ease;
+				transition: all .5s ease; */
 			}
 			&:hover {
 				> a {
-					width:23px;
+					//width:23px;
 				}
 			}
 			&.misc-pub-revisions:hover > a {
@@ -83,15 +93,35 @@ label[for=fixed-submitdiv-hide] {
 	}
 	.misc-pub-section {
 		display: inline-block;
-		padding: 6px 6px 8px;
+		padding: 12px 15px 12px 12px;
 		white-space: nowrap;
+		vertical-align: top;
+		position: relative;
+		background:transparent;
+		@include transition(background, .2s, ease-in-out);
+		> a {
+			background:transparent;
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			z-index: 100;
+			text-indent: -9999px;
+			@include transition(background, .2s, ease-in-out);
+		}
+		&.show, > a:hover {
+			background:rgba(255,255,255,.1);
+		}
+		label {
+		}
 	}
 
 	a:focus {
 		box-shadow: none;
 	}
-	#publishing-action {
-		padding:5px;
+	#publishing-action, #delete-action {
+		padding:7px;
 	}
 }
 

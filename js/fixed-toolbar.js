@@ -215,5 +215,20 @@ jQuery(document).ready( function($) {
 			updateText();
 			event.preventDefault();
 		});
+
+		$('.misc-pub-section > a').click( function(e) {
+			e.preventDefault();
+			if ( $('.misc-pub-section.show').length ) {
+				var miscShow = $('.misc-pub-section.show');
+				miscShow.find('> div').hide('fast');
+				miscShow.find('> a').show('fast');
+				miscShow.removeClass('show');
+			}
+			$(this).parent().addClass('show');
+		});
+		$('.misc-pub-section .button-cancel, .misc-pub-section .button').click( function(e) {
+			e.preventDefault();
+			$(this).closest('.misc-pub-section').removeClass('show');
+		});
 	} // end fixed-submitdiv
 });

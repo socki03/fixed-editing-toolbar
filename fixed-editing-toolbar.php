@@ -15,7 +15,7 @@ if ( !function_exists( 'add_action' ) ) {
 define( 'FIXED_TOOLBAR__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FIXED_TOOLBAR__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-/*require_once( FIXED_TOOLBAR__PLUGIN_DIR . 'fixed-editing-meta-box.php' );*/
+require_once( FIXED_TOOLBAR__PLUGIN_DIR . 'fixed-editing-meta-box.php' );
 
 function get_current_post_type() {
 	global $post, $typenow, $current_screen;
@@ -37,14 +37,20 @@ if ( function_exists('add_action') ) {
 
 function enqueue_scripts() {
 	wp_enqueue_script( 'fixed-toolbar-js', FIXED_TOOLBAR__PLUGIN_URL . 'js/fixed-toolbar.js', array( 'jquery' ) );
-	wp_enqueue_style( 'fixed-toolbar-css', FIXED_TOOLBAR__PLUGIN_URL . 'css/fixed-toolbar.css' );
+
+/* Switched to a Flexbox-based style */
+	wp_enqueue_style( 'fixed-toolbar-flex-css', FIXED_TOOLBAR__PLUGIN_URL . 'css/fixed-toolbar-flex.css' );
+
+/* Keeping the old one around, in case I need it */
+	//wp_enqueue_style( 'fixed-toolbar-css', FIXED_TOOLBAR__PLUGIN_URL . 'css/fixed-toolbar.css' );
+
 }
 add_action( 'admin_enqueue_scripts', 'enqueue_scripts' );
 
 	function remove_submitdiv_meta_box() {
 		if ( $post_type = get_current_post_type() ) {
 			remove_meta_box( 'submitdiv', $post_type, 'side' );
-			add_meta_box( 'fixed-submitdiv', __( 'Publish' ), 'post_submit_meta_box', $post_type, 'advanced', 'core' );
+			add_meta_box( 'fixed-submitdiv', __( 'Publish' ), 'fixed_submit_meta_box', $post_type, 'advanced', 'core' );
 		}
 	}
 	add_action( 'do_meta_boxes', 'remove_submitdiv_meta_box' );

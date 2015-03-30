@@ -1,0 +1,176 @@
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+label[for=fixed-submitdiv-hide] {
+	display: none;
+}
+
+.fixed-toolbar-bottom {
+	#wpcontent {
+		padding-bottom: 44px;
+	}
+}
+.fixed-toolbar-top {
+	#wpcontent {
+		padding-top: 44px;
+	}
+}
+
+#fixed-submitdiv {
+	position:fixed;
+	//bottom:0;
+	top:32px;
+	right:0;
+	width:calc( 100% - 160px );
+	margin-bottom:0;
+	z-index: 1000;
+	border:none;
+	.inside {
+		padding:0;
+		//padding: 5px 12px;
+		margin-top:0px;
+		height:44px;
+	}
+	h3.hndle, .handlediv {
+		display: none;
+	}
+	#submitpost,
+	#minor-publishing,
+	#minor-publishing-actions,
+	#misc-publishing-actions,
+	#major-publishing-actions {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		align-items: flex-start;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+	}
+	#submitpost {
+		justify-content: space-between;
+	}
+	#minor-publishing {
+		justify-content: space-between;
+	}
+	#minor-publishing-actions {
+		padding:0;
+	}
+	#misc-publishing-actions {
+		padding:0;
+		/* align-items: stretch; */
+	}
+	#major-publishing-actions {
+		background:none;
+		border:none;
+		padding:0;
+	}
+	#publishing-action {
+		float:none;
+		padding:0;
+	}
+	.misc-pub-section {
+		padding:0;
+	}
+	.misc-pub-section {
+		display: inline-block;
+		padding: 12px 15px 12px 12px;
+		white-space: nowrap;
+		vertical-align: top;
+		position: relative;
+		background:transparent;
+		p {
+			margin-bottom:0;
+		}
+		@include transition(background, .2s, ease-in-out);
+		> a {
+			background:transparent;
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			z-index: 100;
+			text-indent: -9999px;
+			@include transition(background, .2s, ease-in-out);
+		}
+		label {
+			cursor: default;
+		}
+		> div {
+			margin-top: 12px;
+			&#timestampdiv {
+				padding-top:0;
+			}
+		}
+		a.button-primary {
+			@include transition(background, .2s, ease-in-out);
+		}
+		a.button-cancel {
+			opacity: .7;
+			@include transition(opacity, .2s, ease-in-out);
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	a:focus {
+		box-shadow: none;
+	}
+	#publishing-action, #delete-action {
+		padding:7px;
+	}
+	#save-action > input, #preview-action {
+		margin: 8px 10px;
+	}
+	#post_status {
+		display: block;
+		margin:8px 0;
+	}
+}
+
+$colors: ( "fresh", "light", "blue", "coffee", "ectoplasm", "midnight", "ocean", "sunrise" );
+
+$color-arrays: 	( #333333, #222222, #0074a2, #2ea2cc, #EEEEEE, #464646, rgba(255,255,255,.1) ), /* Fresh */
+				( #CCCCCC, #e5e5e5, #d64e07, #04a4cc, #333333, #B7B7B7, rgba(0,0,0,.1) ),		/* Light */
+				( #096484, #4796b3, #52accc, #74B6CE, #EEEEEE, #21728F, rgba(255,255,255,.1) ),	/* Blue */
+				( #46403c, #59524c, #c7a589, #9ea476, #EEEEEE, #57524E, rgba(255,255,255,.1) ),	/* Coffee */
+				( #413256, #523f6d, #a3b745, #d46f15, #EEEEEE, #534566, rgba(255,255,255,.1) ),	/* Ectoplasm */
+				( #25282b, #363b3f, #69a8bb, #e14d43, #EEEEEE, #3A3C3F, rgba(255,255,255,.1) ),	/* Midnight */
+				( #627c83, #738e96, #9ebaa0, #aa9d88, #EEEEEE, #71888E, rgba(255,255,255,.1) ),	/* Ocean */
+				( #b43c38, #cf4944, #dd823b, #ccaf0b, #EEEEEE, #BA4E4B, rgba(255,255,255,.1) );	/* Sunrise */
+
+@for $i from 1 through length($color-arrays) {
+	.admin-color-#{nth($colors, $i)} {
+		#fixed-submitdiv {
+			background-color: nth(nth($color-arrays, $i), 1);
+			#misc-publishing-actions {
+				.misc-pub-section {
+					background-color: nth(nth($color-arrays, $i), 1);
+					&.show {
+						background-color: nth(nth($color-arrays, $i), 6);
+					}
+					> a:hover {
+						background-color: nth(nth($color-arrays, $i), 7);
+					}
+					&, label, span, &:before, :before {
+						color:  nth(nth($color-arrays, $i), 5);
+					}
+					a.button, a.button-cancel {
+						color:  nth(nth($color-arrays, $i), 5);
+					}
+					/* a, a span {
+						color:  nth(nth($color-arrays, $i), 3);
+					} */
+				}
+			}
+		}
+	}
+}
