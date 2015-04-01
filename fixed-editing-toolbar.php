@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Fixed Editor Toolbar
  * Description: Fixed toolbar that stays with as you scroll while editing a post/page.
- * Version: 0.1
+ * Version: 0.2
  * Author: Brett Wysocki
  * Author URI: http://brettwysocki.com
  */
