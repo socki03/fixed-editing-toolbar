@@ -6,169 +6,445 @@
     transition: $transition-property $transition-time $method;
 }
 
+$left-sidebar-width: 160px;
+$admin-bar-height: 32px;
+$fixed-row-height: 44px;
+$fixed-column-width: 210px;
+$folded-left-sidebar-width: 36px;
+
+/* Breakpoints */
+$tablet-breakpoint: 960px;
+$phone-breakpoint: 783px;
+
 label[for=fixed-submitdiv-hide] {
 	display: none;
 }
 
-.fixed-toolbar-bottom {
-	#wpcontent {
-		padding-bottom: 44px;
-	}
-}
-.fixed-toolbar-top {
-	#wpcontent {
-		padding-top: 44px;
-	}
-}
-
-#fixed-submitdiv {
-	position:fixed;
-	//bottom:0;
-	top:32px;
-	right:0;
-	width:calc( 100% - 160px );
-	margin-bottom:0;
-	z-index: 1000;
-	border:none;
-	.inside {
-		padding:0;
-		//padding: 5px 12px;
-		margin-top:0px;
-		height:44px;
-	}
-	h3.hndle, .handlediv {
-		display: none;
-	}
-	#submitpost,
-	#minor-publishing,
-	#minor-publishing-actions,
-	#misc-publishing-actions,
-	#major-publishing-actions {
-		display: -webkit-box;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		align-items: flex-start;
-		-webkit-flex-flow: row wrap;
-		flex-flow: row wrap;
-	}
-	#submitpost {
-		justify-content: space-between;
-	}
-	#minor-publishing {
-		justify-content: space-between;
-	}
-	#minor-publishing-actions {
-		padding:0;
-	}
-	#misc-publishing-actions {
-		padding:0;
-		/* align-items: stretch; */
-	}
-	#major-publishing-actions {
-		background:none;
-		border:none;
-		padding:0;
-	}
-	#publishing-action {
-		float:none;
-		padding:0;
-	}
-	.misc-pub-section {
-		padding:0;
-	}
-	.misc-pub-section {
-		display: inline-block;
-		padding: 12px 15px 12px 12px;
-		white-space: nowrap;
-		vertical-align: top;
-		position: relative;
-		background:transparent;
-		p {
-			margin-bottom:0;
-		}
-		@include transition(background, .2s, ease-in-out);
-		> a {
-			background:transparent;
-			position: absolute;
-			top:0;
-			left:0;
+/* Admin Settings Page */
+.settings_page_fixed-editing-toolbar {
+	.wrap {
+		.icon {
+			display: block;
+			margin:0 auto 10px;
 			width:100%;
-			height:100%;
-			z-index: 100;
-			text-indent: -9999px;
-			@include transition(background, .2s, ease-in-out);
-		}
-		label {
-			cursor: default;
-		}
-		> div {
-			margin-top: 12px;
-			&#timestampdiv {
-				padding-top:0;
+			max-width:256px;
+			/* width:256px; */
+			height:144px;
+			position: relative;
+			border: 1px solid black;
+			&:before, &:after {
+				content: ' ';
+				position: absolute;
+				top:0;
+				left:0;
+				z-index: 100;
+				background: grey;
+			}
+			&:before {
+				width:20%;
+				height:100%;
+			}
+			&:after {
+				width:100%;
+				height:10%;
+			}
+			span {
+				display: block;
+				position: absolute;
+				z-index: 1;
+				background:red;
 			}
 		}
-		a.button-primary {
-			@include transition(background, .2s, ease-in-out);
+		.top, .bottom {
+			.icon span {
+				width:100%;
+				height:10%;
+			}
 		}
-		a.button-cancel {
-			opacity: .7;
-			@include transition(opacity, .2s, ease-in-out);
-			&:hover {
-				opacity: 1;
+		.top .icon span {
+			top:10%;
+		}
+		.bottom .icon span {
+			bottom:0%;
+		}
+		.right, .left {
+			.icon span {
+				width:20%;
+				height:100%;
+			}
+		}
+		.right .icon span {
+			right:0%;
+		}
+		.left .icon span {
+			left:20%;
+		}
+		.choices td {
+			text-align: center;
+		}
+	}
+}
+
+/* Only works on screens 783px & above */
+@media screen and ( min-width: #{$phone-breakpoint} ) {
+	.fixed-toolbar {
+		/* -- Fixed Toolbar Top & Bottom -- */
+		&.ft-bottom, &.ft-top {
+			#fixed-submitdiv {
+				width:calc( 100% - #{$left-sidebar-width} );
+				right:0;
+				.inside {
+					height: $fixed-row-height;
+				}
+				#submitpost,
+				#minor-publishing,
+				#minor-publishing-actions,
+				#misc-publishing-actions,
+				#major-publishing-actions {
+					align-items: flex-start;
+					-webkit-flex-flow: row wrap;
+					flex-flow: row wrap;
+				}
+				#submitpost {
+					justify-content: space-between;
+				}
+				#minor-publishing {
+					justify-content: space-between;
+				}
+			}
+			&.folded {
+				#fixed-submitdiv {
+					width: calc( 100% - #{$folded-left-sidebar-width} );
+				}
+			}
+		}
+		/* -- Fixed Toolbar Bottom -- */
+		&.ft-bottom {
+			#wpcontent {
+				padding-bottom: $fixed-row-height;
+			}
+			#fixed-submitdiv {
+				top:auto;
+				bottom:0;
+			}
+		}
+		/* -- Fixed Toolbar Top -- */
+		&.ft-top {
+			#wpcontent {
+				padding-top: $fixed-row-height;
+			}
+			#fixed-submitdiv {
+				top:$admin-bar-height;
+				bottom:auto;
+			}
+		}
+
+		/* -- Fixed Toolbar Left & Right -- */
+		&.ft-right, &.ft-left {
+			#fixed-submitdiv {
+				height:calc( 100% - #{$admin-bar-height} );
+				top: $admin-bar-height;
+				#submitpost,
+				#minor-publishing,
+				#minor-publishing-actions,
+				#misc-publishing-actions,
+				#major-publishing-actions {
+					-webkit-flex-flow: column;
+					flex-flow: column;
+					flex-wrap: nowrap;
+					width:100%;
+				}
+				#minor-publishing, #major-publishing-actions {
+					padding:20px 0;
+				}
+				#submitpost, #minor-publishing, #major-publishing-actions {
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: center;
+				}
+				#minor-publishing-actions, #major-publishing-actions, .preview, #delete-action, #publishing-action {
+					float:none;
+					text-align: center;
+				}
+				#minor-publishing-actions {
+					input#save-post {
+						float:none;
+					}
+				}
+				.inside {
+					width: $fixed-column-width;
+					&, .submitbox {
+						height:100%;
+					}
+					#visibility, .curtime, .misc-pub-post-status {
+						padding-left: 40px;
+					}
+					#visibility:before, span#timestamp:before, .misc-pub-post-status > label:before {
+						position: absolute;
+						top:50%;
+						left:0;
+					}
+					#visibility {
+						display: block !important;
+						white-space: normal;
+						position: relative;
+						&:before {
+							margin-top: -9px;
+							margin-left: 9px;
+						}
+						#post-visibility-display {
+							display: block;
+						}
+					}
+					.misc-pub-post-status {
+						label:before {
+							margin-top: -9px;
+							margin-left: 9px;
+						}
+					}
+					.curtime{
+						position: relative;
+						span#timestamp {
+							display: block !important;
+							white-space: normal;
+							&:before {
+								margin-top: -11px;
+								margin-left: 11px;
+							}
+							> b {
+								display: block;
+							}
+						}
+						.timestamp-wrap {
+							white-space: normal;
+							line-height: 25px;
+							select, input {
+								display: inline-block;
+								vertical-align: top;
+							}
+						}
+					}
+					#post-status-display {
+						display: block;
+					}
+				}
+			}
+		}
+		/* -- Fixed Toolbar Right -- */
+		&.ft-right {
+			#wpcontent, #wpfooter {
+				margin-right: $fixed-column-width;
+			}
+			#fixed-submitdiv {
+				left:auto;
+				right:0;
+			}
+		}
+		/* -- Fixed Toolbar Left -- */
+		&.ft-left {
+			#wpcontent, #wpfooter {
+				margin-left: $left-sidebar-width + $fixed-column-width;
+			}
+			#fixed-submitdiv {
+				left:$left-sidebar-width;
+				right:auto;
+			}
+			&.folded {
+				#wpcontent {
+					margin-left: $folded-left-sidebar-width + $fixed-column-width;
+				}
+				#fixed-submitdiv {
+					left: $folded-left-sidebar-width;
+				}
 			}
 		}
 	}
 
-	a:focus {
-		box-shadow: none;
-	}
-	#publishing-action, #delete-action {
-		padding:7px;
-	}
-	#save-action > input, #preview-action {
-		margin: 8px 10px;
-	}
-	#post_status {
-		display: block;
-		margin:8px 0;
+	#fixed-submitdiv {
+		position:fixed;
+		margin-bottom:0;
+		z-index: 1000;
+		border:none;
+		min-width: 0;
+		.inside {
+			padding:0;
+			margin-top:0px;
+		}
+		h3.hndle, .handlediv {
+			display: none;
+		}
+		#submitpost,
+		#minor-publishing,
+		#minor-publishing-actions,
+		#misc-publishing-actions,
+		#major-publishing-actions {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+		}	
+		#minor-publishing-actions {
+			padding:0;
+		}
+		#misc-publishing-actions {
+			padding:0;
+		}
+		#major-publishing-actions {
+			background:none;
+			border:none;
+			padding:0;
+		}
+		#publishing-action {
+			float:none;
+			padding:0;
+		}
+		.misc-pub-section {
+			display: inline-block;
+			padding: 12px 15px 12px 12px;
+			white-space: nowrap;
+			vertical-align: top;
+			position: relative;
+			background:transparent;
+			p {
+				margin-bottom:0;
+			}
+			@include transition(background, .2s, ease-in-out);
+			> a {
+				background:transparent;
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				z-index: 100;
+				text-indent: -9999px;
+				@include transition(background, .2s, ease-in-out);
+			}
+			label {
+				cursor: default;
+			}
+			> div {
+				margin-top: 12px;
+				&#timestampdiv {
+					padding-top:0;
+				}
+			}
+			a.button-primary {
+				@include transition(background, .2s, ease-in-out);
+			}
+			a.button-cancel {
+				opacity: .7;
+				@include transition(opacity, .2s, ease-in-out);
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		a:focus {
+			box-shadow: none;
+		}
+		#publishing-action, #delete-action {
+			padding:7px;
+		}
+		#save-action > input, #preview-action {
+			margin: 8px 10px;
+		}
+		#post_status {
+			display: block;
+			margin:8px 0;
+		}
 	}
 }
+
+@media screen and ( max-width: #{$tablet-breakpoint} ) and ( min-width: #{$phone-breakpoint} ) {
+	.fixed-toolbar {
+		&.ft-top, &.ft-bottom {
+			#fixed-submitdiv {
+				width:calc( 100% - #{$folded-left-sidebar-width} );
+			}
+		}
+		&.ft-left {
+			#wpcontent, #wpfooter {
+				margin-left: $folded-left-sidebar-width + $fixed-column-width;
+			}
+			#fixed-submitdiv {
+				left: $folded-left-sidebar-width;
+			}
+		}
+	}
+}
+/* @media screen and (max-width:782px) {
+	.fixed-toolbar {
+		&.ft-top, &.ft-bottom {
+			#fixed-submitdiv {
+				width:100%;
+			}
+		}
+		&.ft-top
+		&.ft-left {
+			#wpcontent, #wpfooter {
+				margin-left: $folded-left-sidebar-width + $fixed-column-width;
+			}
+			#fixed-submitdiv {
+				left: $folded-left-sidebar-width;
+			}
+		}
+	}
+} */
+
+
+/* Color settings for admin sections */
 
 $colors: ( "fresh", "light", "blue", "coffee", "ectoplasm", "midnight", "ocean", "sunrise" );
 
 $color-arrays: 	( #333333, #222222, #0074a2, #2ea2cc, #EEEEEE, #464646, rgba(255,255,255,.1) ), /* Fresh */
 				( #CCCCCC, #e5e5e5, #d64e07, #04a4cc, #333333, #B7B7B7, rgba(0,0,0,.1) ),		/* Light */
-				( #096484, #4796b3, #52accc, #74B6CE, #EEEEEE, #21728F, rgba(255,255,255,.1) ),	/* Blue */
+				( #096484, #52accc, #4796b3, #74B6CE, #EEEEEE, #21728F, rgba(255,255,255,.1) ),	/* Blue */
 				( #46403c, #59524c, #c7a589, #9ea476, #EEEEEE, #57524E, rgba(255,255,255,.1) ),	/* Coffee */
 				( #413256, #523f6d, #a3b745, #d46f15, #EEEEEE, #534566, rgba(255,255,255,.1) ),	/* Ectoplasm */
 				( #25282b, #363b3f, #69a8bb, #e14d43, #EEEEEE, #3A3C3F, rgba(255,255,255,.1) ),	/* Midnight */
 				( #627c83, #738e96, #9ebaa0, #aa9d88, #EEEEEE, #71888E, rgba(255,255,255,.1) ),	/* Ocean */
 				( #b43c38, #cf4944, #dd823b, #ccaf0b, #EEEEEE, #BA4E4B, rgba(255,255,255,.1) );	/* Sunrise */
 
-@for $i from 1 through length($color-arrays) {
-	.admin-color-#{nth($colors, $i)} {
-		#fixed-submitdiv {
-			background-color: nth(nth($color-arrays, $i), 1);
-			#misc-publishing-actions {
-				.misc-pub-section {
-					background-color: nth(nth($color-arrays, $i), 1);
-					&.show {
-						background-color: nth(nth($color-arrays, $i), 6);
+@media screen and ( min-width:783px ) {
+	@for $i from 1 through length($color-arrays) {
+		.admin-color-#{nth($colors, $i)} {
+			#fixed-submitdiv {
+				background-color: nth(nth($color-arrays, $i), 1);
+				#misc-publishing-actions {
+					.misc-pub-section {
+						background-color: nth(nth($color-arrays, $i), 1);
+						&.show {
+							background-color: nth(nth($color-arrays, $i), 6);
+						}
+						> a:hover {
+							background-color: nth(nth($color-arrays, $i), 7);
+						}
+						&, label, span, &:before, :before {
+							color:  nth(nth($color-arrays, $i), 5);
+						}
+						a.button, a.button-cancel {
+							color:  nth(nth($color-arrays, $i), 5);
+						}
+						/* a, a span {
+							color:  nth(nth($color-arrays, $i), 3);
+						} */
 					}
-					> a:hover {
-						background-color: nth(nth($color-arrays, $i), 7);
-					}
-					&, label, span, &:before, :before {
-						color:  nth(nth($color-arrays, $i), 5);
-					}
-					a.button, a.button-cancel {
-						color:  nth(nth($color-arrays, $i), 5);
-					}
-					/* a, a span {
-						color:  nth(nth($color-arrays, $i), 3);
-					} */
+				}
+			}
+
+			&.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after {
+				border-right-color: nth(nth($color-arrays, $i), 1);
+			}
+
+			&.settings_page_fixed-editing-toolbar .wrap .icon {
+				&:before, &:after {
+					background-color:nth(nth($color-arrays, $i), 2);
+				}
+				span {
+					background-color:nth(nth($color-arrays, $i), 1);
 				}
 			}
 		}

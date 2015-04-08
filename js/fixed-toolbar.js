@@ -13,8 +13,6 @@ jQuery(document).ready( function($) {
 		$postStatusSelect = $('#post-status-select');
 	// fixed-submitdiv
 	if ( $('#fixed-submitdiv').length ) {
-		//$('html').addClass('fixed-toolbar-bottom');
-		$('html').addClass('fixed-toolbar-top');
 		stamp = $('#timestamp').html();
 		visibility = $('#post-visibility-display').html();
 

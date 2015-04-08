@@ -1,241 +1,466 @@
+/* Breakpoints */
 label[for=fixed-submitdiv-hide] {
   display: none; }
 
-.fixed-toolbar-bottom #wpcontent {
-  padding-bottom: 44px; }
-
-.fixed-toolbar-top #wpcontent {
-  padding-top: 44px; }
-
-#fixed-submitdiv {
-  position: fixed;
-  top: 32px;
-  right: 0;
-  width: calc(100% - 160px );
-  margin-bottom: 0;
-  z-index: 1000;
-  border: none; }
-  #fixed-submitdiv .inside {
-    padding: 0;
-    margin-top: 0px;
-    height: 44px; }
-  #fixed-submitdiv h3.hndle, #fixed-submitdiv .handlediv {
-    display: none; }
-  #fixed-submitdiv #submitpost,
-  #fixed-submitdiv #minor-publishing,
-  #fixed-submitdiv #minor-publishing-actions,
-  #fixed-submitdiv #misc-publishing-actions,
-  #fixed-submitdiv #major-publishing-actions {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap; }
-  #fixed-submitdiv #submitpost {
-    justify-content: space-between; }
-  #fixed-submitdiv #minor-publishing {
-    justify-content: space-between; }
-  #fixed-submitdiv #minor-publishing-actions {
-    padding: 0; }
-  #fixed-submitdiv #misc-publishing-actions {
-    padding: 0;
-    /* align-items: stretch; */ }
-  #fixed-submitdiv #major-publishing-actions {
-    background: none;
-    border: none;
-    padding: 0; }
-  #fixed-submitdiv #publishing-action {
-    float: none;
-    padding: 0; }
-  #fixed-submitdiv .misc-pub-section {
-    padding: 0; }
-  #fixed-submitdiv .misc-pub-section {
-    display: inline-block;
-    padding: 12px 15px 12px 12px;
-    white-space: nowrap;
-    vertical-align: top;
-    position: relative;
-    background: transparent;
-    -webkit-transition: background 0.2s ease-in-out;
-    -moz-transition: background 0.2s ease-in-out;
-    -ms-transition: background 0.2s ease-in-out;
-    -o-transition: background 0.2s ease-in-out;
-    transition: background 0.2s ease-in-out; }
-    #fixed-submitdiv .misc-pub-section p {
-      margin-bottom: 0; }
-    #fixed-submitdiv .misc-pub-section > a {
-      background: transparent;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 100;
-      text-indent: -9999px;
-      -webkit-transition: background 0.2s ease-in-out;
-      -moz-transition: background 0.2s ease-in-out;
-      -ms-transition: background 0.2s ease-in-out;
-      -o-transition: background 0.2s ease-in-out;
-      transition: background 0.2s ease-in-out; }
-    #fixed-submitdiv .misc-pub-section label {
-      cursor: default; }
-    #fixed-submitdiv .misc-pub-section > div {
-      margin-top: 12px; }
-      #fixed-submitdiv .misc-pub-section > div#timestampdiv {
-        padding-top: 0; }
-    #fixed-submitdiv .misc-pub-section a.button-primary {
-      -webkit-transition: background 0.2s ease-in-out;
-      -moz-transition: background 0.2s ease-in-out;
-      -ms-transition: background 0.2s ease-in-out;
-      -o-transition: background 0.2s ease-in-out;
-      transition: background 0.2s ease-in-out; }
-    #fixed-submitdiv .misc-pub-section a.button-cancel {
-      opacity: .7;
-      -webkit-transition: opacity 0.2s ease-in-out;
-      -moz-transition: opacity 0.2s ease-in-out;
-      -ms-transition: opacity 0.2s ease-in-out;
-      -o-transition: opacity 0.2s ease-in-out;
-      transition: opacity 0.2s ease-in-out; }
-      #fixed-submitdiv .misc-pub-section a.button-cancel:hover {
-        opacity: 1; }
-  #fixed-submitdiv a:focus {
-    box-shadow: none; }
-  #fixed-submitdiv #publishing-action, #fixed-submitdiv #delete-action {
-    padding: 7px; }
-  #fixed-submitdiv #save-action > input, #fixed-submitdiv #preview-action {
-    margin: 8px 10px; }
-  #fixed-submitdiv #post_status {
+/* Admin Settings Page */
+.settings_page_fixed-editing-toolbar .wrap .icon {
+  display: block;
+  margin: 0 auto 10px;
+  width: 100%;
+  max-width: 256px;
+  /* width:256px; */
+  height: 144px;
+  position: relative;
+  border: 1px solid black; }
+  .settings_page_fixed-editing-toolbar .wrap .icon:before, .settings_page_fixed-editing-toolbar .wrap .icon:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: grey; }
+  .settings_page_fixed-editing-toolbar .wrap .icon:before {
+    width: 20%;
+    height: 100%; }
+  .settings_page_fixed-editing-toolbar .wrap .icon:after {
+    width: 100%;
+    height: 10%; }
+  .settings_page_fixed-editing-toolbar .wrap .icon span {
     display: block;
-    margin: 8px 0; }
+    position: absolute;
+    z-index: 1;
+    background: red; }
+.settings_page_fixed-editing-toolbar .wrap .top .icon span, .settings_page_fixed-editing-toolbar .wrap .bottom .icon span {
+  width: 100%;
+  height: 10%; }
+.settings_page_fixed-editing-toolbar .wrap .top .icon span {
+  top: 10%; }
+.settings_page_fixed-editing-toolbar .wrap .bottom .icon span {
+  bottom: 0%; }
+.settings_page_fixed-editing-toolbar .wrap .right .icon span, .settings_page_fixed-editing-toolbar .wrap .left .icon span {
+  width: 20%;
+  height: 100%; }
+.settings_page_fixed-editing-toolbar .wrap .right .icon span {
+  right: 0%; }
+.settings_page_fixed-editing-toolbar .wrap .left .icon span {
+  left: 20%; }
+.settings_page_fixed-editing-toolbar .wrap .choices td {
+  text-align: center; }
 
+/* Only works on screens 783px & above */
+@media screen and (min-width: 783px) {
+  .fixed-toolbar {
+    /* -- Fixed Toolbar Top & Bottom -- */
+    /* -- Fixed Toolbar Bottom -- */
+    /* -- Fixed Toolbar Top -- */
+    /* -- Fixed Toolbar Left & Right -- */
+    /* -- Fixed Toolbar Right -- */
+    /* -- Fixed Toolbar Left -- */ }
+    .fixed-toolbar.ft-bottom #fixed-submitdiv, .fixed-toolbar.ft-top #fixed-submitdiv {
+      width: calc(100% - 160px );
+      right: 0; }
+      .fixed-toolbar.ft-bottom #fixed-submitdiv .inside, .fixed-toolbar.ft-top #fixed-submitdiv .inside {
+        height: 44px; }
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #submitpost,
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #minor-publishing,
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #minor-publishing-actions,
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #misc-publishing-actions,
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #major-publishing-actions, .fixed-toolbar.ft-top #fixed-submitdiv #submitpost,
+      .fixed-toolbar.ft-top #fixed-submitdiv #minor-publishing,
+      .fixed-toolbar.ft-top #fixed-submitdiv #minor-publishing-actions,
+      .fixed-toolbar.ft-top #fixed-submitdiv #misc-publishing-actions,
+      .fixed-toolbar.ft-top #fixed-submitdiv #major-publishing-actions {
+        align-items: flex-start;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap; }
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #submitpost, .fixed-toolbar.ft-top #fixed-submitdiv #submitpost {
+        justify-content: space-between; }
+      .fixed-toolbar.ft-bottom #fixed-submitdiv #minor-publishing, .fixed-toolbar.ft-top #fixed-submitdiv #minor-publishing {
+        justify-content: space-between; }
+    .fixed-toolbar.ft-bottom.folded #fixed-submitdiv, .fixed-toolbar.ft-top.folded #fixed-submitdiv {
+      width: calc(100% - 36px ); }
+    .fixed-toolbar.ft-bottom #wpcontent {
+      padding-bottom: 44px; }
+    .fixed-toolbar.ft-bottom #fixed-submitdiv {
+      top: auto;
+      bottom: 0; }
+    .fixed-toolbar.ft-top #wpcontent {
+      padding-top: 44px; }
+    .fixed-toolbar.ft-top #fixed-submitdiv {
+      top: 32px;
+      bottom: auto; }
+    .fixed-toolbar.ft-right #fixed-submitdiv, .fixed-toolbar.ft-left #fixed-submitdiv {
+      height: calc(100% - 32px );
+      top: 32px; }
+      .fixed-toolbar.ft-right #fixed-submitdiv #submitpost,
+      .fixed-toolbar.ft-right #fixed-submitdiv #minor-publishing,
+      .fixed-toolbar.ft-right #fixed-submitdiv #minor-publishing-actions,
+      .fixed-toolbar.ft-right #fixed-submitdiv #misc-publishing-actions,
+      .fixed-toolbar.ft-right #fixed-submitdiv #major-publishing-actions, .fixed-toolbar.ft-left #fixed-submitdiv #submitpost,
+      .fixed-toolbar.ft-left #fixed-submitdiv #minor-publishing,
+      .fixed-toolbar.ft-left #fixed-submitdiv #minor-publishing-actions,
+      .fixed-toolbar.ft-left #fixed-submitdiv #misc-publishing-actions,
+      .fixed-toolbar.ft-left #fixed-submitdiv #major-publishing-actions {
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        width: 100%; }
+      .fixed-toolbar.ft-right #fixed-submitdiv #minor-publishing, .fixed-toolbar.ft-right #fixed-submitdiv #major-publishing-actions, .fixed-toolbar.ft-left #fixed-submitdiv #minor-publishing, .fixed-toolbar.ft-left #fixed-submitdiv #major-publishing-actions {
+        padding: 20px 0; }
+      .fixed-toolbar.ft-right #fixed-submitdiv #submitpost, .fixed-toolbar.ft-right #fixed-submitdiv #minor-publishing, .fixed-toolbar.ft-right #fixed-submitdiv #major-publishing-actions, .fixed-toolbar.ft-left #fixed-submitdiv #submitpost, .fixed-toolbar.ft-left #fixed-submitdiv #minor-publishing, .fixed-toolbar.ft-left #fixed-submitdiv #major-publishing-actions {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; }
+      .fixed-toolbar.ft-right #fixed-submitdiv #minor-publishing-actions, .fixed-toolbar.ft-right #fixed-submitdiv #major-publishing-actions, .fixed-toolbar.ft-right #fixed-submitdiv .preview, .fixed-toolbar.ft-right #fixed-submitdiv #delete-action, .fixed-toolbar.ft-right #fixed-submitdiv #publishing-action, .fixed-toolbar.ft-left #fixed-submitdiv #minor-publishing-actions, .fixed-toolbar.ft-left #fixed-submitdiv #major-publishing-actions, .fixed-toolbar.ft-left #fixed-submitdiv .preview, .fixed-toolbar.ft-left #fixed-submitdiv #delete-action, .fixed-toolbar.ft-left #fixed-submitdiv #publishing-action {
+        float: none;
+        text-align: center; }
+      .fixed-toolbar.ft-right #fixed-submitdiv #minor-publishing-actions input#save-post, .fixed-toolbar.ft-left #fixed-submitdiv #minor-publishing-actions input#save-post {
+        float: none; }
+      .fixed-toolbar.ft-right #fixed-submitdiv .inside, .fixed-toolbar.ft-left #fixed-submitdiv .inside {
+        width: 210px; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside, .fixed-toolbar.ft-right #fixed-submitdiv .inside .submitbox, .fixed-toolbar.ft-left #fixed-submitdiv .inside, .fixed-toolbar.ft-left #fixed-submitdiv .inside .submitbox {
+          height: 100%; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside #visibility, .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime, .fixed-toolbar.ft-right #fixed-submitdiv .inside .misc-pub-post-status, .fixed-toolbar.ft-left #fixed-submitdiv .inside #visibility, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime, .fixed-toolbar.ft-left #fixed-submitdiv .inside .misc-pub-post-status {
+          padding-left: 40px; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside #visibility:before, .fixed-toolbar.ft-right #fixed-submitdiv .inside span#timestamp:before, .fixed-toolbar.ft-right #fixed-submitdiv .inside .misc-pub-post-status > label:before, .fixed-toolbar.ft-left #fixed-submitdiv .inside #visibility:before, .fixed-toolbar.ft-left #fixed-submitdiv .inside span#timestamp:before, .fixed-toolbar.ft-left #fixed-submitdiv .inside .misc-pub-post-status > label:before {
+          position: absolute;
+          top: 50%;
+          left: 0; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside #visibility, .fixed-toolbar.ft-left #fixed-submitdiv .inside #visibility {
+          display: block !important;
+          white-space: normal;
+          position: relative; }
+          .fixed-toolbar.ft-right #fixed-submitdiv .inside #visibility:before, .fixed-toolbar.ft-left #fixed-submitdiv .inside #visibility:before {
+            margin-top: -9px;
+            margin-left: 9px; }
+          .fixed-toolbar.ft-right #fixed-submitdiv .inside #visibility #post-visibility-display, .fixed-toolbar.ft-left #fixed-submitdiv .inside #visibility #post-visibility-display {
+            display: block; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside .misc-pub-post-status label:before, .fixed-toolbar.ft-left #fixed-submitdiv .inside .misc-pub-post-status label:before {
+          margin-top: -9px;
+          margin-left: 9px; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime {
+          position: relative; }
+          .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime span#timestamp, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime span#timestamp {
+            display: block !important;
+            white-space: normal; }
+            .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime span#timestamp:before, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime span#timestamp:before {
+              margin-top: -11px;
+              margin-left: 11px; }
+            .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime span#timestamp > b, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime span#timestamp > b {
+              display: block; }
+          .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime .timestamp-wrap, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime .timestamp-wrap {
+            white-space: normal;
+            line-height: 25px; }
+            .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime .timestamp-wrap select, .fixed-toolbar.ft-right #fixed-submitdiv .inside .curtime .timestamp-wrap input, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime .timestamp-wrap select, .fixed-toolbar.ft-left #fixed-submitdiv .inside .curtime .timestamp-wrap input {
+              display: inline-block;
+              vertical-align: top; }
+        .fixed-toolbar.ft-right #fixed-submitdiv .inside #post-status-display, .fixed-toolbar.ft-left #fixed-submitdiv .inside #post-status-display {
+          display: block; }
+    .fixed-toolbar.ft-right #wpcontent, .fixed-toolbar.ft-right #wpfooter {
+      margin-right: 210px; }
+    .fixed-toolbar.ft-right #fixed-submitdiv {
+      left: auto;
+      right: 0; }
+    .fixed-toolbar.ft-left #wpcontent, .fixed-toolbar.ft-left #wpfooter {
+      margin-left: 370px; }
+    .fixed-toolbar.ft-left #fixed-submitdiv {
+      left: 160px;
+      right: auto; }
+    .fixed-toolbar.ft-left.folded #wpcontent {
+      margin-left: 246px; }
+    .fixed-toolbar.ft-left.folded #fixed-submitdiv {
+      left: 36px; }
+
+  #fixed-submitdiv {
+    position: fixed;
+    margin-bottom: 0;
+    z-index: 1000;
+    border: none;
+    min-width: 0; }
+    #fixed-submitdiv .inside {
+      padding: 0;
+      margin-top: 0px; }
+    #fixed-submitdiv h3.hndle, #fixed-submitdiv .handlediv {
+      display: none; }
+    #fixed-submitdiv #submitpost,
+    #fixed-submitdiv #minor-publishing,
+    #fixed-submitdiv #minor-publishing-actions,
+    #fixed-submitdiv #misc-publishing-actions,
+    #fixed-submitdiv #major-publishing-actions {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; }
+    #fixed-submitdiv #minor-publishing-actions {
+      padding: 0; }
+    #fixed-submitdiv #misc-publishing-actions {
+      padding: 0; }
+    #fixed-submitdiv #major-publishing-actions {
+      background: none;
+      border: none;
+      padding: 0; }
+    #fixed-submitdiv #publishing-action {
+      float: none;
+      padding: 0; }
+    #fixed-submitdiv .misc-pub-section {
+      display: inline-block;
+      padding: 12px 15px 12px 12px;
+      white-space: nowrap;
+      vertical-align: top;
+      position: relative;
+      background: transparent;
+      -webkit-transition: background 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out;
+      -ms-transition: background 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out; }
+      #fixed-submitdiv .misc-pub-section p {
+        margin-bottom: 0; }
+      #fixed-submitdiv .misc-pub-section > a {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        text-indent: -9999px;
+        -webkit-transition: background 0.2s ease-in-out;
+        -moz-transition: background 0.2s ease-in-out;
+        -ms-transition: background 0.2s ease-in-out;
+        -o-transition: background 0.2s ease-in-out;
+        transition: background 0.2s ease-in-out; }
+      #fixed-submitdiv .misc-pub-section label {
+        cursor: default; }
+      #fixed-submitdiv .misc-pub-section > div {
+        margin-top: 12px; }
+        #fixed-submitdiv .misc-pub-section > div#timestampdiv {
+          padding-top: 0; }
+      #fixed-submitdiv .misc-pub-section a.button-primary {
+        -webkit-transition: background 0.2s ease-in-out;
+        -moz-transition: background 0.2s ease-in-out;
+        -ms-transition: background 0.2s ease-in-out;
+        -o-transition: background 0.2s ease-in-out;
+        transition: background 0.2s ease-in-out; }
+      #fixed-submitdiv .misc-pub-section a.button-cancel {
+        opacity: .7;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -moz-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out; }
+        #fixed-submitdiv .misc-pub-section a.button-cancel:hover {
+          opacity: 1; }
+    #fixed-submitdiv a:focus {
+      box-shadow: none; }
+    #fixed-submitdiv #publishing-action, #fixed-submitdiv #delete-action {
+      padding: 7px; }
+    #fixed-submitdiv #save-action > input, #fixed-submitdiv #preview-action {
+      margin: 8px 10px; }
+    #fixed-submitdiv #post_status {
+      display: block;
+      margin: 8px 0; } }
+@media screen and (max-width: 960px) and (min-width: 783px) {
+  .fixed-toolbar.ft-top #fixed-submitdiv, .fixed-toolbar.ft-bottom #fixed-submitdiv {
+    width: calc(100% - 36px ); }
+  .fixed-toolbar.ft-left #wpcontent, .fixed-toolbar.ft-left #wpfooter {
+    margin-left: 246px; }
+  .fixed-toolbar.ft-left #fixed-submitdiv {
+    left: 36px; } }
+/* @media screen and (max-width:782px) {
+	.fixed-toolbar {
+		&.ft-top, &.ft-bottom {
+			#fixed-submitdiv {
+				width:100%;
+			}
+		}
+		&.ft-top
+		&.ft-left {
+			#wpcontent, #wpfooter {
+				margin-left: $folded-left-sidebar-width + $fixed-column-width;
+			}
+			#fixed-submitdiv {
+				left: $folded-left-sidebar-width;
+			}
+		}
+	}
+} */
+/* Color settings for admin sections */
 /* Sunrise */
-.admin-color-fresh #fixed-submitdiv {
-  background-color: #333333; }
-  .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #333333;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #464646; }
-    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+@media screen and (min-width: 783px) {
+  .admin-color-fresh #fixed-submitdiv {
+    background-color: #333333; }
+    .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #333333;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #464646; }
+      .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-fresh #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-fresh.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-fresh ul#adminmenu > li.current > a.current:after {
+    border-right-color: #333333; }
+  .admin-color-fresh.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-fresh.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #222222; }
+  .admin-color-fresh.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #333333; }
 
-.admin-color-light #fixed-submitdiv {
-  background-color: #cccccc; }
-  .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #cccccc;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #b7b7b7; }
-    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(0, 0, 0, 0.1); }
-    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #333333; }
-    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #333333; }
+  .admin-color-light #fixed-submitdiv {
+    background-color: #cccccc; }
+    .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #cccccc;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #b7b7b7; }
+      .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(0, 0, 0, 0.1); }
+      .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #333333; }
+      .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-light #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #333333; }
+  .admin-color-light.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-light ul#adminmenu > li.current > a.current:after {
+    border-right-color: #cccccc; }
+  .admin-color-light.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-light.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #e5e5e5; }
+  .admin-color-light.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #cccccc; }
 
-.admin-color-blue #fixed-submitdiv {
-  background-color: #096484; }
-  .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #096484;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #21728f; }
-    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+  .admin-color-blue #fixed-submitdiv {
+    background-color: #096484; }
+    .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #096484;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #21728f; }
+      .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-blue #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-blue.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-blue ul#adminmenu > li.current > a.current:after {
+    border-right-color: #096484; }
+  .admin-color-blue.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-blue.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #52accc; }
+  .admin-color-blue.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #096484; }
 
-.admin-color-coffee #fixed-submitdiv {
-  background-color: #46403c; }
-  .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #46403c;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #57524e; }
-    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+  .admin-color-coffee #fixed-submitdiv {
+    background-color: #46403c; }
+    .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #46403c;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #57524e; }
+      .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-coffee #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-coffee.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-coffee ul#adminmenu > li.current > a.current:after {
+    border-right-color: #46403c; }
+  .admin-color-coffee.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-coffee.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #59524c; }
+  .admin-color-coffee.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #46403c; }
 
-.admin-color-ectoplasm #fixed-submitdiv {
-  background-color: #413256; }
-  .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #413256;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #534566; }
-    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+  .admin-color-ectoplasm #fixed-submitdiv {
+    background-color: #413256; }
+    .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #413256;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #534566; }
+      .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-ectoplasm #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-ectoplasm.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-ectoplasm ul#adminmenu > li.current > a.current:after {
+    border-right-color: #413256; }
+  .admin-color-ectoplasm.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-ectoplasm.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #523f6d; }
+  .admin-color-ectoplasm.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #413256; }
 
-.admin-color-midnight #fixed-submitdiv {
-  background-color: #25282b; }
-  .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #25282b;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #3a3c3f; }
-    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+  .admin-color-midnight #fixed-submitdiv {
+    background-color: #25282b; }
+    .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #25282b;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #3a3c3f; }
+      .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-midnight #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-midnight.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-midnight ul#adminmenu > li.current > a.current:after {
+    border-right-color: #25282b; }
+  .admin-color-midnight.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-midnight.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #363b3f; }
+  .admin-color-midnight.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #25282b; }
 
-.admin-color-ocean #fixed-submitdiv {
-  background-color: #627c83; }
-  .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #627c83;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #71888e; }
-    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+  .admin-color-ocean #fixed-submitdiv {
+    background-color: #627c83; }
+    .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #627c83;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #71888e; }
+      .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-ocean #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-ocean.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-ocean ul#adminmenu > li.current > a.current:after {
+    border-right-color: #627c83; }
+  .admin-color-ocean.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-ocean.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #738e96; }
+  .admin-color-ocean.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #627c83; }
 
-.admin-color-sunrise #fixed-submitdiv {
-  background-color: #b43c38; }
-  .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
-    background-color: #b43c38;
-    /* a, a span {
-    	color:  nth(nth($color-arrays, $i), 3);
-    } */ }
-    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
-      background-color: #ba4e4b; }
-    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
-      background-color: rgba(255, 255, 255, 0.1); }
-    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
-      color: #eeeeee; }
-    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
-      color: #eeeeee; }
+  .admin-color-sunrise #fixed-submitdiv {
+    background-color: #b43c38; }
+    .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section {
+      background-color: #b43c38;
+      /* a, a span {
+      	color:  nth(nth($color-arrays, $i), 3);
+      } */ }
+      .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section.show {
+        background-color: #ba4e4b; }
+      .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section > a:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section label, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section span, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section:before, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section :before {
+        color: #eeeeee; }
+      .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button, .admin-color-sunrise #fixed-submitdiv #misc-publishing-actions .misc-pub-section a.button-cancel {
+        color: #eeeeee; }
+  .admin-color-sunrise.fixed-toolbar.ft-left ul#adminmenu a.wp-has-current-submenu:after, .admin-color-sunrise ul#adminmenu > li.current > a.current:after {
+    border-right-color: #b43c38; }
+  .admin-color-sunrise.settings_page_fixed-editing-toolbar .wrap .icon:before, .admin-color-sunrise.settings_page_fixed-editing-toolbar .wrap .icon:after {
+    background-color: #cf4944; }
+  .admin-color-sunrise.settings_page_fixed-editing-toolbar .wrap .icon span {
+    background-color: #b43c38; } }
